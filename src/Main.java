@@ -8,7 +8,7 @@ public class Main {
         Scanner askNumber = new Scanner(System.in);
         Scanner askName = new Scanner(System.in);
         Scanner askPredict= new Scanner(System.in);
-        System.out.print("Enter a number: ");
+        System.out.print("Enter number of coin you want to flip: ");
         flips = Integer.parseInt(askNumber.nextLine());
 
 

@@ -43,6 +43,10 @@ public class CoinFlipper {
         return name + " has a score of " + score;
     }
     public void winner(String name, String nameTwo, int score, int otherScore){
+        System.out.println("Surprise! There's bonus points!");
+        System.out.println("For each letter in your name, you get one point extra!");
+        score += name.length();
+        otherScore += nameTwo.length();
         if(score > otherScore){
             System.out.println("The Winner is " + name + " with the score of " + score);
         }
