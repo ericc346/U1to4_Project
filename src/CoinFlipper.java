@@ -42,6 +42,7 @@ public class CoinFlipper {
     public String toString(String name, int score){
         return name + " has a score of " + score;
     }
+
     public void winner(String name, String nameTwo, int score, int otherScore){
         System.out.println("Surprise! There's bonus points!");
         System.out.println("For each letter in your name, you get one point extra!");
@@ -54,7 +55,13 @@ public class CoinFlipper {
             System.out.println("The Winner is " + nameTwo + " with the score of " + otherScore);
         }
         if (otherScore == score){
-            System.out.println("No one wins! Both of you are losers");
+            System.out.println("No one wins! Both of you don't win");
         }
+        if (otherScore == score && name.equalsIgnoreCase(nameTwo)){
+            System.out.println("No one wins! At least you have the same name");
+        }
+    }
+    public void coins(){
+        System.out.println(Arrays.toString(hort));
     }
 }

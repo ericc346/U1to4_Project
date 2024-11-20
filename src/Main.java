@@ -28,7 +28,7 @@ public class Main {
         }
         int score = (help.getScore(cars,userPredict));
         System.out.println();
-        System.out.println(help.toString(playerOne,score));
+
         System.out.println();
         System.out.println();
         System.out.print("Enter player two number: ");
@@ -43,9 +43,12 @@ public class Main {
             userPredict[i] = prediction.toLowerCase();
 
         }
+        System.out.println(help.toString(playerOne,score));
         int scoreTwo = (help.getScore(cars,userPredict));
+
         System.out.println(help.toString(playerTwo,scoreTwo));
         System.out.println();
         help.winner(playerOne,playerTwo,score,scoreTwo);
+        help.coins();
     }
 }
