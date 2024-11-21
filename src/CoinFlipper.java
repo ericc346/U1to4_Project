@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.ArrayList;
 
 public class CoinFlipper {
     private String[] hort;
@@ -45,7 +44,7 @@ public class CoinFlipper {
 
     public void winner(String name, String nameTwo, int score, int otherScore){
         System.out.println("Surprise! There's bonus points!");
-        System.out.println("For each letter in your name, you get one point extra!");
+        System.out.println("For each letter in your name, you get 1 point extra!");
         score += name.length();
         otherScore += nameTwo.length();
         if(score > otherScore){
@@ -54,7 +53,7 @@ public class CoinFlipper {
         if(otherScore > score){
             System.out.println("The Winner is " + nameTwo + " with the score of " + otherScore);
         }
-        if (otherScore == score){
+        if (otherScore == score && !(name.equalsIgnoreCase(nameTwo))){
             System.out.println("No one wins! Both of you don't win");
         }
         if (otherScore == score && name.equalsIgnoreCase(nameTwo)){
@@ -63,5 +62,15 @@ public class CoinFlipper {
     }
     public void coins(){
         System.out.println(Arrays.toString(hort));
+    }
+    public void gameCelebration(boolean gameEnd){
+        int i = 0;
+        while(gameEnd) {
+            i++;
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            if(i > 10) {
+                gameEnd = false;
+            }
+        }
     }
 }

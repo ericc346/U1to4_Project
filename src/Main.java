@@ -1,3 +1,4 @@
+import java.security.KeyStore;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -43,12 +44,15 @@ public class Main {
             userPredict[i] = prediction.toLowerCase();
 
         }
-        System.out.println(help.toString(playerOne,score));
+        System.out.println("Player 1:" + help.toString(playerOne,score));
         int scoreTwo = (help.getScore(cars,userPredict));
 
-        System.out.println(help.toString(playerTwo,scoreTwo));
+        System.out.println("Player 2:" + help.toString(playerTwo,scoreTwo));
         System.out.println();
         help.winner(playerOne,playerTwo,score,scoreTwo);
         help.coins();
+        boolean gameEnd = true;
+        help.gameCelebration(gameEnd);
+
     }
 }
