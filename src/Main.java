@@ -8,16 +8,18 @@ public class Main {
         int flips;
         Scanner askNumber = new Scanner(System.in);
         Scanner askName = new Scanner(System.in);
-        Scanner askPredict= new Scanner(System.in);
+        Scanner askPredict = new Scanner(System.in);
         System.out.print("Enter number of coin you want to flip: ");
         flips = Integer.parseInt(askNumber.nextLine());
-
-
-        CoinFlipper help = new CoinFlipper();
-        String[] cars = help.flipCoin(flips);
-        String[] userPredict = new String[flips];
         System.out.print("Enter player one name: ");
         String playerOne = askName.nextLine();
+        System.out.print("Enter player two number: ");
+        String playerTwo = askName.nextLine();
+
+        CoinFlipper help = new CoinFlipper(playerOne, playerTwo);
+        String[] cars = help.flipCoin(flips);
+        String[] userPredict = new String[flips];
+        help.playerOne();
         for(int i = 0; i < flips ; i++){
             System.out.println();
             System.out.println("-------------");
@@ -32,9 +34,8 @@ public class Main {
 
         System.out.println();
         System.out.println();
-        System.out.print("Enter player two number: ");
-        String playerTwo = askName.nextLine();
 
+        help.playerTwo();
         for(int i = 0; i < flips ; i++){
             System.out.println();
             System.out.println("-------------");
@@ -50,7 +51,9 @@ public class Main {
         System.out.println("Player 2:" + help.toString(playerTwo,scoreTwo));
         System.out.println();
         help.winner(playerOne,playerTwo,score,scoreTwo);
+        help.player();
         help.coins();
+        System.out.println();
         boolean gameEnd = true;
         help.gameCelebration(gameEnd);
 

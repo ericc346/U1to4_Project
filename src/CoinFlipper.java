@@ -2,10 +2,12 @@ import java.util.Arrays;
 
 public class CoinFlipper {
     private String[] hort;
-
-    public CoinFlipper()
+    private String playerOne;
+    private String playerTwo;
+    public CoinFlipper(String playerOne, String playerTwo)
     {
-
+        this.playerOne = playerOne;
+        this.playerTwo = playerTwo;
     }
     public String[] flipCoin(int flipNumber){
         hort = new String[flipNumber];
@@ -61,14 +63,24 @@ public class CoinFlipper {
         }
     }
     public void coins(){
-        System.out.println(Arrays.toString(hort));
+        System.out.println("Correct Prediction: " + Arrays.toString(hort));
+    }
+    public void player(){
+        System.out.println("Player 1:" + playerOne);
+        System.out.println("Player 2:" + playerTwo);
+    }
+    public void playerOne(){
+        System.out.print("Player One Turn:");
+    }
+    public void playerTwo(){
+        System.out.print("Player Two Turn:");
     }
     public void gameCelebration(boolean gameEnd){
         int i = 0;
         while(gameEnd) {
             i++;
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            if(i > 10) {
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!Game Over!!!!!!!!!!!!!!!!!!!!!!");
+            if(i > 5) {
                 gameEnd = false;
             }
         }
