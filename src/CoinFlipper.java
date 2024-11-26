@@ -34,7 +34,6 @@ public class CoinFlipper {
     public int getScore(String[] coinFlips, String[] userPredicts)  //checks if index of the user predicts array
                                                                     // equal coin flip array assign points randomly
                                                                     // adds points to the score return score
-
     {
         int score = 0;
         for(int i = 0; i < coinFlips.length; i++){
@@ -49,6 +48,7 @@ public class CoinFlipper {
         }
         return score;
     }
+
     public String toString(String name, int score){
         return name + " has a score of " + score;                           // returns String
     }
@@ -72,6 +72,7 @@ public class CoinFlipper {
             System.out.println("No one wins! At least you have the same name");
         }
     }
+
     public void coins() //print the coin flipped array
     {
         System.out.println("Correct Prediction: " + Arrays.toString(hort));  // turns array into string
@@ -82,6 +83,7 @@ public class CoinFlipper {
         System.out.println("Player 1: " + playerOne +" has score of " + (score + playerOne.length()));
         System.out.println("Player 2: " + playerTwo +" has score of " + (scoreTwo + playerOne.length()));
     }
+
     public void playerOne() //prints player one turn
     {
         System.out.print("Player One Turn:");
